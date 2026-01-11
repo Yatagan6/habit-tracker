@@ -8,12 +8,14 @@ def show_menu():
 def main():
     while True:
         show_menu()
-        choice = input("Выберите действие:")
-        if choice == "4":
-            print("Выход из программы")
-            break
+        choice = input("Выберите действие: ")
+        if choice == "1":
+            show_habits()
         elif choice == "2":
             add_habit()
+        elif choice == "4":
+            print("Выход из программы")
+            break
         else:
             print("Неверный пункт меню")
 def add_habit():
@@ -23,4 +25,14 @@ def add_habit():
         "done": False
     })
     print("Привычка добавлена")
+def show_habits():
+    if not habits:
+        print("Пока привычек нет.")
+        return
+    else:
+        for index, habit in enumerate(habits, start=1):
+            name = habit["name"]
+            done = habit["done"]
+            status = "✓" if done else "✗"
+            print(f"{index}. {name} [{status}]")
 main()
