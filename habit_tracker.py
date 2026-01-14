@@ -13,6 +13,8 @@ def main():
             show_habits()
         elif choice == "2":
             add_habit()
+        elif choice == "3":
+            mark_habit_done()
         elif choice == "4":
             print("Выход из программы")
             break
@@ -35,4 +37,16 @@ def show_habits():
             done = habit["done"]
             status = "✓" if done else "✗"
             print(f"{index}. {name} [{status}]")
+def mark_habit_done():
+    if not habits:
+        print("Нет привычек для отметки.")
+        return
+    
+    show_habits()
+    number = input("Введите номер привычки: ")
+    number = int(number)
+    index = number - 1
+
+    habits[index]["done"] = True
+    print("Привычка отмечена как выполненная.")
 main()
