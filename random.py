@@ -1,4 +1,4 @@
-
+import random
 class Drone:
     @staticmethod
     def generate_random_name():
