@@ -20,9 +20,7 @@ class SmartSensors:
             return("Стабильно")
 sensor = SmartSensors(25)
 print(f"Текущая температура: {sensor.temp}")
-
 sensor.temp = 70
 print(f"Статус после нагрева: {sensor.temp_status}")
-
-sensor.temp = 150        # Должно выдать предупреждение
+sensor.temp = 150
 sensor.temp = "Слишком жарко"

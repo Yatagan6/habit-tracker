@@ -21,19 +21,10 @@ class Drone:
     def __str__(self):
         return f"Дрон {self.name} | Пушек: {self.guns} | HP: {self.__health}"
 
-# --- ТЕСТ ---
 d1 = Drone("Alpha-7", 100, 2)
 d2 = Drone("Zeta-3", 80, 4)
-
-# МАГИЯ!
 d3 = d1 + d2 
-
-print(d3) # Выведет: Дрон Alpa-3 | Пушек: 6 | HP: 90
-
-
-
-
-
+print(d3)
 class Drone:
     def __init__(self, name, hp, slots):
         self.name = name
